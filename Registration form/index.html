@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="formValidations.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bs-example" style="border: 1px solid blue">
+    <div class="col-md-11">
+        <div class="page-header text-center">
+            <h1><span class="glyphicon glyphicon-user" style="color: blue;"></span> Register User </h1>
+        </div>
+    </div>
+    <form class="form-horizontal" method="post" name="myForm">
+        <div class="form-group">
+            <label for="inputFname" class="control-label col-xs-2">First Name:</label>
+            <div class="col-xs-7">
+                <input type="text" name="fName" class="form-control" id="inputFname" placeholder="Enter Your First Name..."
+                     maxlength="8" minlength="4"  required autofocus>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputLname" class="control-label col-xs-2">Last Name:</label>
+            <div class="col-xs-7">
+                <input type="text" name="lName" class="form-control" id="inputLname" placeholder="Enter Your Last Name..."
+                       maxlength="8" minlength="4"  required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail" class="control-label col-xs-2">Email Id:</label>
+            <div class="col-xs-7">
+                <input type="email" name="eMail" class="form-control" id="inputEmail" placeholder="Enter Your Mail Id..."
+                     pattern="/^([a-z][a-zA-Z0-9_]*(\.[a-zA-Z][a-zA-Z0-9_]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?)|[7-9][0-9]{9}$/"
+                       required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputGender" class="control-label col-xs-2">Gender:</label>
+            <div class="col-xs-7">
+                <input type="radio" name="gender" value="male"> <b>Male</b>
+                <input type="radio" name="gender" value="female"> <b>Female</b>
+                <input type="radio" name="gender" value="other"> <b>Other</b>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCont" class="control-label col-xs-2">Contact Number:</label>
+            <div class="col-xs-7">
+                <input type="number" name="cNum" class="form-control" id="inputCont" placeholder="+91 Enter Your Contact Number..."
+                     pattern="/^+91(7\d|8\d|9\d)\d{9}$/"  required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputDob" class="control-label col-xs-2">Date Of Birth:</label>
+            <div class="col-xs-7">
+                <input type="date" name="dOb" class="form-control" id="inputDob" placeholder="Enter Your Date Of Birth..." required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputUname" class="control-label col-xs-2">User Name:</label>
+            <div class="col-xs-7">
+                <input type="text" name="uName" class="form-control" id="inputUname" placeholder="Enter User Name..."
+                       maxlength="8" minlength="4"  required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPwd" class="control-label col-xs-2">Password:</label>
+            <div class="col-xs-7">
+                <input type="password" name="pWd" class="form-control" id="inputPwd" placeholder="Enter Password..."
+                      pattern="/^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/"
+                       data-toggle="popover" title="Password Format" data-placement="top" data-trigger="focus"
+                       data-content="Password contain at least one upper case letter, one digit,one special character and it must be 8 characters..." required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputCpwd" class="control-label col-xs-2">Confirm Password:</label>
+            <div class="col-xs-7">
+                <input type="password" name="cPwd" class="form-control" id="inputCpwd" placeholder="Renter Password..." required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+                <button type="submit" class="btn btn-warning" onclick="clearText()">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
